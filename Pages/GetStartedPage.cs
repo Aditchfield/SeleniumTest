@@ -7,17 +7,17 @@ using OpenQA.Selenium.Chrome;
 
 namespace SeleniumTestProject.Pages
 {
-    public class SigninPage
+    public class GetStartedPage
     {
         private By phoneNo = By.Id("phoneNo");
-        private By password = By.Id("password");
-        private By login = By.Id("checkLogin");
+        private By postcode = By.Id("postcode");
+        private By getStartedBtn = By.Id("submitPostcode");
 
-        public void SignIn(IWebDriver driver)
+        public void FillAndSubmitForm(IWebDriver driver)
         {
             driver.FindElement(phoneNo).SendKeys("07368696269");
-            driver.FindElement(password).SendKeys("@abc123");
-            driver.FindElement(login).Click();
+            driver.FindElement(postcode).SendKeys("LS20 8JN");
+            driver.FindElement(getStartedBtn).Click();
         }
     }
 }

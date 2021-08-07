@@ -9,9 +9,11 @@ namespace SeleniumTestProject.Pages
 {
     public class Homepage
     {
+        private By menu = By.ClassName("navbar-toggler");
+        private By signInBtn = By.ClassName("signinmobile");
         private By postcode = By.Id("postcode");
         private By findBtn = By.Id("checkPostcode5");
-        private By signInBtn = By.ClassName("btn-signin");
+        private By getStartedBtn = By.ClassName("btn-gets");
 
         public SignupPage EnterPostcode(IWebDriver driver)
         {
@@ -22,8 +24,15 @@ namespace SeleniumTestProject.Pages
 
         public SigninPage ClickSignIn(IWebDriver driver)
         {
+            driver.FindElement(menu).Click();
             driver.FindElement(signInBtn).Click();
             return new SigninPage();
+        }
+
+        public GetStartedPage ClickGetStarted(IWebDriver driver)
+        {
+            driver.FindElement(getStartedBtn).Click();
+            return new GetStartedPage();
         }
     }
 }

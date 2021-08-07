@@ -31,8 +31,14 @@ namespace SeleniumTestProject
         [TestMethod]
         public void SignInTest() 
         {
-            var SigninPage = homepage.ClickSignIn(driver);
-            SigninPage.SignIn(driver);
+            var signinPage = homepage.ClickSignIn(driver);
+            signinPage.SignIn(driver);
+        }
+        [TestMethod]
+        public void GetStartedTest()
+        {
+            var getStartedPage = homepage.ClickGetStarted(driver);
+            getStartedPage.FillAndSubmitForm(driver);
         }
         [TestCleanup]
         public void Shutdown()
